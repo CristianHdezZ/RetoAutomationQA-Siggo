@@ -1,0 +1,76 @@
+#Compiled class file
+*.class
+
+#Log file
+*.log
+
+#BlueJ File
+*.ctxt
+
+#Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+# Package Files #
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.rar
+*.edp
+
+# PowerShell File #
+.*ps1
+
+# Intellij
+/.idea/
+/out/s
+
+#Gradle
+/.gradle/
+/build/
+
+# Ignore Gradle GUI config
+gradle-app.setting
+
+# Cache of project
+.gradletasknamecache
+
+# Eclipse
+.classpath
+.project
+.metadata
+
+bin/
+tmp/
+*.tmp
+*.bak
+*.swp
+local.properties
+.settings/
+.localpath
+.recommenders
+
+# External tool builders
+.externalToolBuilders/
+
+.launch
+.pydevproject
+.cproject
+.factorypath
+.buildpath
+.target
+.tern-project
+.textlipse
+.springBeans
+.recommenders/
+.cache-main
+.scala_dependencies
+/.sonar/
+.vscode/
+sonar-project.properties
+.scannerwork
+target/site/serenity/datatables/*
+/target/
+
+

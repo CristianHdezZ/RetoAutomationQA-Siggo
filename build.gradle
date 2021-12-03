@@ -1,0 +1,87 @@
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'eclipse'
+apply plugin: 'net.serenity-bdd.aggregator'
+
+group 'co.com.siggo.certification.testqa'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+repositories {
+    mavenCentral()
+    mavenLocal()
+}
+
+buildscript {
+    repositories {
+        mavenLocal()
+        mavenCentral()
+    }
+    ext{
+        serenityVersion = "3.0.1"
+        serenityGradleVersion = "2.4.34"
+        serenityCucumberVersion = "3.0.1"
+        slf4jVersion = '1.7.30'
+        junitVersion = '4.13'
+        assertJVersion = '3.8.0'
+        logbackVersion = '1.2.3'
+
+        jsonSchemaValidatorVersion = '3.0.7'
+        jsonPath = '4.3.2'
+        lombokVersion = '1.18.20'
+        javaFakerVersion = '1.0.2'
+        poi = '4.1.2'
+        poiOmlx = '4.1.0'
+    }
+    dependencies {
+        classpath("net.serenity-bdd:serenity-gradle-plugin:$rootProject.ext.serenityGradleVersion")
+        classpath "net.serenity-bdd:serenity-single-page-report:2.2.8"
+    }
+}
+
+dependencies {
+    //implementation "ch.qos.logback:logback-classic:${logbackVersion}"
+    implementation group: 'net.serenity-bdd', name: 'serenity-cucumber', version: "$rootProject.ext.serenityCucumberVersion"
+    implementation group: 'net.serenity-bdd', name: 'serenity-junit', version: "$rootProject.ext.serenityVersion"
+    implementation group: 'net.serenity-bdd', name: 'serenity-core', version: "$rootProject.ext.serenityVersion"
+    implementation group: 'net.serenity-bdd', name: 'serenity-screenplay', version: "$rootProject.ext.serenityVersion"
+    implementation group: 'net.serenity-bdd', name: 'serenity-screenplay-webdriver', version: "$rootProject.ext.serenityVersion"
+    implementation group: 'net.serenity-bdd', name: 'serenity-screenplay-rest', version: "$rootProject.ext.serenityVersion"
+    implementation group: 'org.slf4j', name: 'slf4j-simple', version: "$rootProject.ext.slf4jVersion"
+    implementation group: 'junit', name: 'junit', version: "$rootProject.ext.junitVersion"
+
+    implementation group: 'io.rest-assured', name: 'json-schema-validator', version: "$rootProject.ext.jsonSchemaValidatorVersion"
+    implementation group: 'io.rest-assured', name: 'json-path', version: "$rootProject.ext.jsonPath"
+    implementation group: 'com.github.javafaker', name: 'javafaker', version: "$rootProject.ext.javaFakerVersion"
+    //implementation group: 'corg.apache.poi', name: 'poi', version: "$rootProject.ext.poi"
+    //implementation group: 'corg.apache.poi', name: 'poi-ooxml', version: "$rootProject.ext.poiOmlx"
+
+
+    annotationProcessor "org.projectlombok:lombok"
+
+    compileOnly "org.projectlombok:lombok:${lombokVersion}"
+    annotationProcessor "org.projectlombok:lombok:${lombokVersion}"
+
+    testCompileOnly "org.projectlombok:lombok:${lombokVersion}"
+    testAnnotationProcessor "org.projectlombok:lombok:${lombokVersion}"
+
+
+
+
+}
+
+test {
+    systemProperties System.getProperties()
+    systemProperty "file.encoding", "UTF-8"
+    systemProperty "feature.file.encoding", "UTF-8"
+    systemProperty "cucumber.options", System.properties.getProperty("cucumber.options")
+    testLogging.showStandardStreams = true
+    gradle.startParameter.continueOnFailure = true
+    finalizedBy(aggregate)
+}
