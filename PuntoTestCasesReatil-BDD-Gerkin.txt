@@ -25,8 +25,6 @@ Feature: Comprar prodcuto en saucedemo.com
       |user|password|
       |<user>|<password>|
     Then verifica que retorne el mensaje "Epic sadface: Username and password do not match any user in this service"
-      |user|
-      |<user>|
     Examples:
       |user|password|
       |standard_user|secret_sauce33|
@@ -37,8 +35,6 @@ Feature: Comprar prodcuto en saucedemo.com
       |user|password|
       |<user>|<password>|
     Then verifica que retorne el mensaje "Epic sadface: Username and password do not match any user in this service"
-      |user|
-      |<user>|
     Examples:
       |user|password|
       |standard_user|secret_sauce33|
