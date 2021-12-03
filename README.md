@@ -86,7 +86,7 @@ git clone https://github.com/CristianHdezZ/RetoAutomationQA-Siggo.git
 
 **2. Importar el proyecto**
   
-Para importar el proyecto debe hacerlo desde el IDE de su preferencia seleccionando la carpeta **"RetoQA-Siggo"** como un proyecto Gradle. 
+Para importar el proyecto debe hacerlo desde el IDE de su preferencia seleccionando la carpeta **"RetoAutomationQA-Siggo"** como un proyecto Gradle. 
   
   
 **3. Ejecutar el proyecto** 
