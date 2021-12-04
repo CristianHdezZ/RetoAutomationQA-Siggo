@@ -27,4 +27,4 @@ Feature: Comprar articulo con garantia extendida
       |<nombreProducto>|<cantidad>|<marca>|<categoria>|<precio>|<garantia>|<valorGarantia>|
     Examples:
       |nombreProducto|cantidad|marca|categoria|precio|garantia|valorGarantia|ecommerce|resultadoConsulta|
-      |Consola PS4 Mega18|2|PlayStation|Tecnología-Gaming|$1.799.900|1 año de Garantía Extendida $ 195.490|$ 195.490|Falabella|Falabella Colombia: Último Día sin IVA 2021|
+      |Consola PS4 Mega18|2|PlayStation|Tecnología-Gaming|$1.799.900|1 año de Garantía Extendida $ 195.490|$ 195.490|Falabella|Lo encontré en Falabella.com|

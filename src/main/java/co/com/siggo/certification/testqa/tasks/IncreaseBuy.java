@@ -31,7 +31,7 @@ public class IncreaseBuy implements Task {
         //System.out.println("Valor: "+strCantidadProducto);
         WebElement LABEL_QUANTITY = getDriver().findElement(By.id("quantityInput"));
         actor.attemptsTo(
-                //IncreaseQuantity.amount(lisResultAmount.get(0).get("cantidad"),LABEL_QUANTITY,BUTTON_INCREASE)
+                IncreaseQuantity.amount(lisResultAmount.get(0).get("cantidad"),LABEL_QUANTITY,BUTTON_INCREASE)
         );
     }
 }

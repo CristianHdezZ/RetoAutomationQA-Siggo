@@ -1,11 +1,11 @@
 @CompraProductoSaucedemo
 Feature: Comprar prodcuto en saucedemo.com
-  Yo como usurio de saucedemo.com
+  Yo como usuario de saucedemo.com
   ingreso a saucedemo.com
   a comprar un producto
 
   Background:
-    Given el "usurio" ingresa a al sitio
+    Given el "usuario" ingresa a al sitio
 
   @Login_credeciales_validas
    Scenario Outline: Login con credenciales validas
@@ -54,7 +54,7 @@ Feature: Comprar prodcuto en saucedemo.com
 
   @CompraFallida
   Scenario Outline: Compra Fallida
-    Given el "usurio" ingresa a al sitio
+    Given el "usuario" ingresa a al sitio
     When ingresa sus credenciales
       |user|password|
       |<user>|<password>|
